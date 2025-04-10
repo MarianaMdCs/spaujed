@@ -22,8 +22,8 @@ export default async function DashboardLayout({
     });
   }
 
-  if (user?.role == "ADMIN") {
-    redirect("/admin")
+  if (user?.role == "MEMBER") {
+    redirect("/agremiado")
   }
   return (
     <SidebarProvider className="flex min-h-screen">

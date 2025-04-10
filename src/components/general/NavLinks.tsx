@@ -11,6 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
+import { redirect } from "next/navigation";
 
 
 interface NavLinksProps {
@@ -61,11 +62,16 @@ export default async function NavLinks({
               <DropdownMenuItem>Solicitudes</DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
+
                 <form
                   className="w-full"
                   action={async () => {
                     "use server";
-                    await signOut();
+                    return await signOut(
+                      {
+                        redirectTo: '/'
+                      }
+                    );
                   }}
                 >
                   <Button type="submit" variant="destructive" className="w-full">

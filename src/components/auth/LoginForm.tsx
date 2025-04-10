@@ -44,7 +44,7 @@ export default function LoginForm() {
      setIsLoading(false) 
     } else {
       console.log("Login successful")
-      redirect("/")
+      redirect("/agremiado")
     }
   }
 
